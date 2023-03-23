@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
+    <script src="index.js" defer> </script>
+    <title> Document </title>
+</head>
+<body>
+
+    <button id="playPauseButton"> <i class="icon-play"> </i> </button>
+    <audio id="audioPlayer" src="" style="display: none;"> </audio>
+
+</body>
+</html>
+
+
+<style>
+
+* {
+
+    padding: 0;
+    margin: 0;
+
+}
+
+.sus {
+
+    background-color: blue;
+    padding: 900px;
+
+}
+
+</style>
+
+<script>
+
+let file = "file:///C:/Users/Kai/Music/Songs/Other/Dammit.mp3";
+let playing = false;
+const audioPlayer = document.querySelector("#audioPlayer");
+audioPlayer.src = URL.createObjectURL(file);
+audioPlayer.load();
+
+document.getElementById("playPauseButton").addEventListener("click", () => {
+
+    if (playing) {
+
+        playing = false;
+        audioPlayer.pause();
+
+    } else {
+
+        playing = true;
+        audioPlayer.play();
+
+    }
+
+});
+
+
+</script>
